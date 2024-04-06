@@ -1,40 +1,54 @@
 package StepDefinitions;
 
+import Pages.DialogContent;
+import Pages.GenNav;
+import Utilities.GWD;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class TC_01_RegisterSteps {
-    @And("the user fills the fields on the screen with the testaic shape")
-    public void theUserFillsTheFieldsOnTheScreenWithTheTestaicShape() {
-    }
+    GenNav gn=new GenNav();
+    DialogContent dc=new DialogContent();
+
 
     @Given("User navigate to the parabank Website")
     public void userNavigateToTheParabankWebsite() {
+        GWD.getDriver().get("https://parabank.parasoft.com/parabank/index.htm");
     }
 
-    @And("website has a connection such as {string} or {string} on its home page")
-    public void websiteHasAConnectionSuchAsOrOnItsHomePage(String arg0, String arg1) {
+
+    @When("User clicks the Register link")
+    public void userClicksTheRegisterLink() {
+       gn.myClick(gn.register);
+
     }
 
-    @When("User clicks the {string} link")
-    public void userClicksTheLink(String arg0) {
+    @And("the user fills the fields on the screen")
+    public void theUserFillsTheFieldsOnTheScreen(DataTable registerFields) {
+        List<List<String>> listTxtYazi = registerFields.asLists(String.class);
+
+        for (int i = 0; i < listTxtYazi.size(); i++) {
+            WebElement txtBoxWebElement = dc.getWebElement(listTxtYazi.get(i).get(0));
+            dc.mySendKeys(txtBoxWebElement, listTxtYazi.get(i).get(1));
+        }
     }
 
-    @And("the user clicks the {string} or {string} button")
-    public void theUserClicksTheOrButton(String arg0, String arg1) {
-    }
+    @And("the user clicks the Register button")
+    public void theUserClicksTheRegisterButton() {
+            gn.myClick(gn.register);
+        }
+
 
     @Then("user confirms that a successful registration process has taken place")
     public void userConfirmsThatASuccessfulRegistrationProcessHasTakenPlace() {
+        gn.verifyContainsText(gn.titleWelcome,"welcome");
+
+        }
     }
 
-    @And("user,{string} sees a message like")
-    public void userSeesAMessageLike(String arg0) {
-    }
-
-    @And("the user will enter the system with the information he entered during the registration")
-    public void theUserWillEnterTheSystemWithTheInformationHeEnteredDuringTheRegistration() {
-    }
-}
