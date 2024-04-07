@@ -56,6 +56,42 @@ public class DialogContent extends ParentPage {
     @FindBy(css = "[name='password']")
     public WebElement loginPassword;
 
+    //tuba
+    @FindBy(xpath = "//input[@name='payee.name']")
+    public WebElement payeename;
+
+    @FindBy(xpath = "//input[@name='payee.address.street']")
+    public WebElement payeeaddress;
+
+    @FindBy(xpath = "//input[@name='payee.address.city']")
+    public WebElement payeeaddresscity;
+
+    @FindBy(xpath = "//input[@name='payee.address.state']")
+    public WebElement Payeeaddrestate;
+
+    @FindBy(xpath = "//input[@name='payee.address.zipCode']")
+    public WebElement payeeaddressZipcode;
+
+    @FindBy(xpath = "//input[@name='payee.phoneNumber']")
+    public WebElement payeephoneNumber;
+
+    @FindBy(xpath = "//input[@name='payee.accountNumber']")
+    public WebElement payeeaccountNumber;
+
+    @FindBy(xpath = "//input[@name='verifyAccount']")
+    public WebElement verifyAccount;
+
+    @FindBy(xpath = "//input[@name='amount']")
+    public WebElement payeeamount;
+
+    @FindBy(xpath = "//select[@name='fromAccountId']")
+    public WebElement selectAccount;
+
+    @FindBy(xpath = "//input[@class='button']")
+    public WebElement sendpaymentButton;
+
+
+
     public WebElement getWebElement(String strElement) {
         switch (strElement) {
             case "firstName":
@@ -88,7 +124,25 @@ public class DialogContent extends ParentPage {
                 return this.loginUsername;
             case "loginPassword":
                 return this.loginPassword;
+            case "payeename":
+                return this.payeename;
+            case "payeeaddress":
+                return this.payeeaddress;
 
+            case "payeeaddresscity":
+                return this.payeeaddresscity;
+            case "Payeeaddrestate":
+                return this.Payeeaddrestate;
+            case "payeeaddressZipcode":
+                return this.payeeaddressZipcode;
+            case "payeephoneNumber":
+                return this.payeephoneNumber;
+            case "payeeaccountNumber":
+                return this.payeeaccountNumber;
+            case "verifyAccount":
+                return this.verifyAccount;
+            case "payeeamount":
+                return this.payeeamount;
 
         }
         return null;

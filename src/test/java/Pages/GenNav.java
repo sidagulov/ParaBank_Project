@@ -2,6 +2,7 @@ package Pages;
 
 import Utilities.GWD;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.devtools.v85.applicationcache.model.ApplicationCacheStatusUpdated;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -22,6 +23,10 @@ public class GenNav extends ParentPage{
 
     @FindBy(xpath = "//div[@id='rightPanel']/h1")
     public WebElement errorMessage;
+
+    @FindBy(xpath = "//a[text()='Bill Pay']")
+    public WebElement billpay;  //tuba
+
 
     public WebElement getWebElement(String strElement){
         switch (strElement){

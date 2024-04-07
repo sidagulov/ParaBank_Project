@@ -41,12 +41,12 @@ public class ParentPage {
         wait.until(ExpectedConditions.textToBePresentInElement(element,value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
 
-       // new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform(); //sayfaya ESC tuşu gönderildi
+        // new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform(); //sayfaya ESC tuşu gönderildi
     }
 
-    public void SelectMenu(WebElement element, String value) {
+    public void SelectMenu(WebElement element, int index) {
         Select select = new Select(element);
-        select.selectByValue(value);
+        select.selectByIndex(index);
     }
 
     public int randomGenerator(int until) {
