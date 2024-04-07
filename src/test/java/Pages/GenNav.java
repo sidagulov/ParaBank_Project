@@ -14,16 +14,25 @@ public class GenNav extends ParentPage{
     @FindBy(xpath = "//a[text()='Register']")
     public WebElement register;
 
-    @FindBy(xpath = "//*[@class='title']")
+    @FindBy(xpath = "//div[@id='leftPanel']/p/b")
     public WebElement titleWelcome;
+
+    @FindBy(xpath = "//div[@id='leftPanel']/h2")
+    public WebElement customerLogin;
+
+    @FindBy(xpath = "//div[@id='rightPanel']/h1")
+    public WebElement errorMessage;
 
     public WebElement getWebElement(String strElement){
         switch (strElement){
             case "register": return this.register;
             case "titleWelcome": return this.titleWelcome;
+
         }
         return null;
     }
+
+
 
 
 }

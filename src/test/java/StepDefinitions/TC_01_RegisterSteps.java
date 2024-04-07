@@ -41,13 +41,13 @@ public class TC_01_RegisterSteps {
 
     @And("the user clicks the Register button")
     public void theUserClicksTheRegisterButton() {
-            gn.myClick(gn.register);
+            dc.myClick(dc.registerButton);
         }
 
 
     @Then("user confirms that a successful registration process has taken place")
     public void userConfirmsThatASuccessfulRegistrationProcessHasTakenPlace() {
-        gn.verifyContainsText(gn.titleWelcome,"welcome");
+        gn.verifyContainsText(gn.titleWelcome,"Welcome");
 
         }
     }

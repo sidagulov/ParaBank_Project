@@ -15,7 +15,7 @@ Feature: Open a new user account
       | zipCode         | 312918      |
       | phoneNumber     | 56587468764 |
       | ssn             | 821         |
-      | userName        | burak888    |
+      | userName        | burak999    |
       | password        | 1234567     |
       | confirmPassword | 1234567     |
 
