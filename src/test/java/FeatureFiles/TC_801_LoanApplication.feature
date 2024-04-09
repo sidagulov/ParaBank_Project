@@ -5,7 +5,7 @@ Feature: Loan Application
     And the user sees the Customer Login section on the home page.
     And the user fills the fields on the screen
       | loginUsername | burak999 |
-      | loginPassword | 1234567 |
+      | loginPassword | 1234567  |
     And the user clicks the login button
     Then user confirms that a successful registration process has taken place
 
@@ -16,14 +16,13 @@ Feature: Loan Application
     And user selects an account number in the from account # field
     And user click on the Apply Now button
     And user confirms the following information:
-      | Loan Provider           | Parabank                     |
-      | Status                  | Approved                     |
-      | Congratulations Message | Your loan Has Been Approved. |
+      | Loan Provider           | Parabank                                      |
+      | Status                  | Approved                                      |
+      | Congratulations Message | Congratulations, Your loan Has Been Approved. |
     When user Click on the link of the newly created credit account number
     And user confirms the following information:
-      | Title          | Value                       |
       | Account Number | (New Credit Account Number) |
       | Account Type   | Loan                        |
-      | Balance        | $ 2000.00                   |
-      | Availble       | $ 2000.00                   |
-    And user "No Transaction Found." confirms the message
+      | Balance        | $2000.00                    |
+      | Available      | $2000.00                    |
+    And user "No Transactions Found." confirms the message

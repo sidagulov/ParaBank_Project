@@ -49,9 +49,11 @@ public class TC_08_LoanApplication {
 
     @When("user Click on the link of the newly created credit account number")
     public void userClickOnTheLinkOfTheNewlyCreatedCreditAccountNumber() {
+        lf.myClick(lf.newAccountLink);
     }
 
     @And("user {string} confirms the message")
-    public void userConfirmsTheMessage(String arg0) {
+    public void userConfirmsTheMessage(String message) {
+        lf.verifyContainsText(lf.transactionMessage,message);
     }
 }
