@@ -16,13 +16,13 @@ Feature: Loan Application
     And user selects an account number in the from account # field
     And user click on the Apply Now button
     And user confirms the following information:
-      | Loan Provider           | Parabank                                      |
-      | Status                  | Approved                                      |
-      | Congratulations Message | Congratulations, Your loan Has Been Approved. |
+      | Loan Provider           | ParaBank                                     |
+      | Status                  | Approved                                     |
+      | Congratulations Message | Congratulations, your loan has been approved |
     When user Click on the link of the newly created credit account number
     And user confirms the following information:
       | Account Number | (New Credit Account Number) |
-      | Account Type   | Loan                        |
+      | Account Type   | LOAN                        |
       | Balance        | $2000.00                    |
       | Available      | $2000.00                    |
-    And user "No Transactions Found." confirms the message
+    And user "No transactions found." confirms the message
