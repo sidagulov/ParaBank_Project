@@ -11,6 +11,8 @@ import java.util.List;
 public class TC_08_LoanApplication {
     LoanFeature lf = new LoanFeature();
 
+    private String accountNumber;
+
     @And("user click on {string} link")
     public void userClickOnLink(String linkText) {
         WebElement requestLoanLink = lf.getWebElement(linkText);
@@ -43,12 +45,16 @@ public class TC_08_LoanApplication {
 
         for (int i = 0; i < listTxtYazi.size(); i++) {
             WebElement txtBoxWebElement = lf.getWebElement(listTxtYazi.get(i).get(0));
-            lf.verifyContainsText(txtBoxWebElement, listTxtYazi.get(i).get(1));
+            if (listTxtYazi.get(i).get(0).equals("Account Number"))
+                lf.verifyContainsText(txtBoxWebElement, accountNumber);
+            else
+                lf.verifyContainsText(txtBoxWebElement, listTxtYazi.get(i).get(1));
         }
     }
 
     @When("user Click on the link of the newly created credit account number")
     public void userClickOnTheLinkOfTheNewlyCreatedCreditAccountNumber() {
+        accountNumber = lf.newAccountLink.getText();
         lf.myClick(lf.newAccountLink);
     }
 
