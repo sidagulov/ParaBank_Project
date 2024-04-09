@@ -4,19 +4,18 @@ Feature: Loan Application
     Given User navigate to the parabank Website
     And the user sees the Customer Login section on the home page.
     And the user fills the fields on the screen
-      | loginUsername | burak888 |
-      | loginPassword | 12345678 |
+      | loginUsername | burak999 |
+      | loginPassword | 1234567 |
     And the user clicks the login button
     Then user confirms that a successful registration process has taken place
 
   Scenario: Request credit
     And user click on "Request Loan" link
-    And user enters "$ 2000" in the "loan amount" field
-    And user enters "400" dollars in "Down Payment" field
-    And user selects an account number in the "from account #"
-    And user click on the "Apply Now" button
+    And user enters $ "2000" in the loan amount field
+    And user enters "400" dollars in Down Payment field
+    And user selects an account number in the from account # field
+    And user click on the Apply Now button
     And user confirms the following information:
-      | Title                   | Value                        |
       | Loan Provider           | Parabank                     |
       | Status                  | Approved                     |
       | Congratulations Message | Your loan Has Been Approved. |
