@@ -42,7 +42,7 @@ public class TC_08_LoanApplication {
         List<List<String>> listTxtYazi = datas.asLists(String.class);
 
         for (int i = 0; i < listTxtYazi.size(); i++) {
-            WebElement txtBoxWebElement = dc.getWebElement(listTxtYazi.get(i).get(0));
+            WebElement txtBoxWebElement = lf.getWebElement(listTxtYazi.get(i).get(0));
             lf.verifyContainsText(txtBoxWebElement, listTxtYazi.get(i).get(1));
         }
     }

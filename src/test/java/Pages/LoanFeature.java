@@ -28,8 +28,11 @@ public class LoanFeature extends ParentPage{
 
 
     public WebElement getWebElement(String strElement){
-        if (strElement.equals("Request Loan")) {
-            return this.requestLoanLink;
+        switch (strElement){
+            case "Request Loan": return this.requestLoanLink;
+            case "Loan Provider": return this.loanProvider;
+            case "Status": return this.loanStatus;
+            case "Congratulations Message": return this.congratMessage;
         }
         return null;
     }
