@@ -2,12 +2,9 @@ package Pages;
 
 import Utilities.GWD;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,6 +44,11 @@ public class ParentPage {
     public void SelectMenu(WebElement element, int index) {
         Select select = new Select(element);
         select.selectByIndex(index);
+    }
+
+    public void SelectValue(WebElement element, String value) {
+        Select select = new Select(element);
+        select.selectByValue(value);
     }
 
     public int randomGenerator(int until) {
