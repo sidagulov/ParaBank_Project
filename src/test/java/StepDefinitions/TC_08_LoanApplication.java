@@ -62,4 +62,9 @@ public class TC_08_LoanApplication {
     public void userConfirmsTheMessage(String message) {
         lf.verifyContainsText(lf.transactionMessage,message);
     }
+
+    @And("user confirms the following message: {string}")
+    public void userConfirmsTheFollowingMessage(String message) {
+        lf.verifyContainsText(lf.denyMessage,message);
+    }
 }

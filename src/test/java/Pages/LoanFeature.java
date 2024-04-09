@@ -37,6 +37,8 @@ public class LoanFeature extends ParentPage{
     public WebElement availableBalance;
     @FindBy(xpath = "//div[@ng-if='showActivity']/p/b")
     public WebElement transactionMessage;
+    @FindBy(xpath = "//div[@ng-if='loanResponse.message']/p")
+    public WebElement denyMessage;
 
 
     public WebElement getWebElement(String strElement){
