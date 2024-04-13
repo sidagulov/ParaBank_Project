@@ -26,6 +26,43 @@ public class GenNav extends ParentPage{
     @FindBy(xpath = "//a[text()='Bill Pay']")
     public WebElement billpay;
 
+    @FindBy(xpath = "//a[text()='Transfer Funds']")
+    public WebElement transferfunds;
+
+    @FindBy(xpath = "//input[@id='amount']")
+    public WebElement amount;
+
+    @FindBy(xpath = "//input[@class='button']")
+    public WebElement trnsferbutton;
+
+    @FindBy(xpath = "//span[@id='fromAccountId']")
+    public WebElement accountid;
+
+    @FindBy(xpath = "//a[text()='Accounts Overview']")
+    public WebElement accountoverview;
+
+    @FindBy(xpath = "//a[class='ng-binding']")
+    public WebElement accountnumber;
+
+    @FindBy(xpath = "//tr[class='ng-scope']/td")
+    public WebElement date;
+
+    @FindBy(xpath = "//td[class='ng-binding ng-scope']")
+    public WebElement credit;
+
+    @FindBy(xpath = "//select[@id='fromAccountId']")
+    public WebElement fromaccount;
+
+    @FindBy(xpath = "//select[@id='toAccountId']")
+    public WebElement toaccount;
+
+
+
+
+
+
+
+
     @FindBy(xpath = "//a[text()='Open New Account']")
     public WebElement oNewAccount;
 
